@@ -1,0 +1,4 @@
+・KITのfrontier serverにアクセスできる場合は、以下のURLからアクセスできます。
+（KITのサーバーへのアクセス権限を持っている人：KIT学生 または KIT教授）
+
+https://frontier10.kanazawa-it.ac.jp/~a1004049/Artwork_Creation/home/home.html
