@@ -1,0 +1,15 @@
+{
+  "name": "Gyro_Game",
+  "short_name": "PWA",
+  "background_color": "#000000",
+  "icons": [
+    {
+      "src": "../images/topslide_snake.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "../home.html",
+  "scope": "/Gyro_Game/",
+  "display": "standalone"
+}

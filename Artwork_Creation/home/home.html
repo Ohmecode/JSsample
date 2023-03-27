@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">w
+    <!-- json -->
+    <link rel="manifest" href="PWA/manifest.json">
+    <!-- css -->
+    <link rel="stylesheet" href="modaal/modaal.min.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Game menu</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="current"><a href="./home.html">Home</a></li>
+            <li><a href="credit.html">Copyright</a></li>
+            <!-- <button id="navbtn">LINK</button> -->
+        </ul>
+        <h4 class="blctag">すべてジャイロと加速度で動作するゲームです。</h4>
+    </nav>
+
+
+
+    <ul class="slider-3" id="js-slider-3">
+        <li>
+            <div class="slide-img">
+                <a id="idsnake"><img src="images/topslide_snake.png"></a>
+            </div>
+        </li>
+        <li>
+            <div class="slide-img">
+                <a id="idtennis"><img src="images/topslide_tennis4.png" alt=""></a>
+            </div>
+        </li>
+        <li>
+            <div class="slide-img">
+                <a id="idtetris"><img src="images/topslide_tetris.png" alt=""></a>
+            </div>
+        </li>
+    </ul>
+
+    <hr class="slidebtmhr">
+
+
+
+    <div class="area-top">
+        <h2 class="title">Gyro Snake</h2>
+        <img src="images/underline.png" class="underline">
+
+
+        <h4>
+            説明
+        </h4>
+
+        <p>
+            スマホを水平になるように持ち、傾けた方向に蛇(白い■)が動きます。<br>
+            赤い■は1pt、黄色い■は2pt加算され、緑の■は1pt減点されます。<br>
+            合計が10ptになるとゲームが終了します。<br>
+            画面上部の「Allow Gyro」を押してから操作して下さい。<br>
+            ※スマホ画面の自動回転をOFFにして下さい。
+        </p>
+        <div class="right_area">
+            <!-- lengthwise and crosswise -->
+            <ul class="sli_lengthwise" id="js-imgslider1">
+                <li>
+                    <div class="slide-img">
+                        <img src="./images/snake.PNG" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-img">
+                        <img src="images/snake_clear.PNG" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-img">
+                        <img src="images/snake2.PNG" alt="">
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+        <div>
+            <h3 style="text-align: center; font-size: 21px; margin-top:90px;">Difficulty</h3>
+        </div>
+        
+        <table class="difficulty-table">
+            <tr>
+
+                <td>
+                    <h4 class="difficulty">EASY</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playsnake-lv.1">PLAY</button></h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="difficulty">NORMAL</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playsnake-lv.2">PLAY</button></h4>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <h4 class="difficulty">HARD</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playsnake-lv.3">PLAY</button></h4>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <h4 class="difficulty">BAKEMON</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playsnake-lv.4">PLAY</button></h4>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <hr class="hr-top">
+    <div class="area-central">
+        <h2 class="title">Gyro Tennis</h2>
+        <img src="images/underline.png" class="underline">
+        <h4>
+            説明
+        </h4>
+
+        <p>
+            スマホを横に持ち、スマホを傾けることで画面左にあるパドルを操作します。<br>
+            ボールは加速しながら壁に当たると跳ね返ってきます。
+            10点先取10点先取するとWinと表示され、逆に相手に10pt先取されるとLoseと表示されます。<br>
+            画面上部の「Allow Gyro」を押してから操作して下さい。<br>
+            ※スマホ画面の自動回転をOFFにして下さい。<br>
+            ※iosは省電力モードをOFF（すごいバグります）
+
+        </p>
+        <div class="right_area">
+
+            <!-- lengthwise and crosswise -->
+            <ul class="sli_crosswise" id="js-imgslider2">
+                <li>
+                    <div class="slide-img">
+                        <img src="./images/tennis.PNG" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-img">
+                        <img src="images/tennis2.PNG" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-img">
+                        <img src="images/tennis_lose.PNG" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-img">
+                        <img src="images/tennis3.PNG" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-img">
+                        <img src="images/tennis_win.PNG" alt="">
+                    </div>
+                </li>
+            </ul>
+
+
+
+        </div>
+        <div>
+            <h3 style="text-align: center; font-size: 21px; margin-top:90px;">Difficulty</h3>
+        </div>
+        
+        <table class="difficulty-table">
+            <tr>
+                <td>
+                    <h4 class="difficulty">EASY</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playhockey-easy">PLAY</button></h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="difficulty">NORMAL</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playhockey-normal">PLAY</button></h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="difficulty">HARD</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playhockey-hard">PLAY</button></h4>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="difficulty">BAKEMON</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playhockey-bakemon">PLAY</button></h4>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <hr class="hr-central">
+    <div class="area-bottom">
+        <h2 class="title">Gyro Tetris</h2>
+        <img src="images/underline.png" class="underline">
+        <h4>
+            説明
+        </h4>
+        <p>
+            スマホを左右に傾けるとテトリミノが左右に移動します。<br>
+            スマホを1回振るとテトリミノが右回転します。回転したときはバイブレーションでフィードバックします。<br>
+            画面上部の「Allow Gyro」を押してから操作して下さい。<br>
+            ※スマホ画面の自動回転をOFFにして下さい。
+        </p>
+        <div class="right_area">
+
+
+            <!-- lengthwise and crosswise -->
+            <ul class="sli_lengthwise" id="js-imgslider3">
+                <li>
+                    <div class="slide-img">
+                        <img src="./images/tetris.PNG" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-img">
+                        <img src="images/tetris2.PNG" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-img">
+                        <img src="images/tetris_gameover.PNG" alt="">
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+        <div>
+            <h3 style="text-align: center; font-size: 21px; margin-top:90px;">Difficulty</h3>
+        </div>
+        
+        <table class="difficulty-table">
+            <tr>
+                <td>
+                    <h4 class="difficulty">EASY</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playtetris-easy">PLAY</button></h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="difficulty">NORMAL</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playtetris-normal">PLAY</button></h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="difficulty">HARD</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playtetris-hard">PLAY</button></h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4 class="difficulty">BAKEMON</h4>
+                </td>
+                <td>
+                    <h4><button class="btn" id="playtetris-bakemon">PLAY</button></h4>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
+
+<!-- js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="slick/slick.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="home.js"></script>
+
+<!--js-->
+<script src="modaal/modaal.min.js" type="text/javascript"></script>

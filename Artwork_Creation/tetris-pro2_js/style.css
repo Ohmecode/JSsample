@@ -1,0 +1,132 @@
+body{
+    overflow: hidden;
+    background:#554c4c ;
+    color: #FFF;
+    font-family: sans-serif;      
+    font-size: 2em;
+    text-align: center;
+}
+
+canvas {
+  position: center;
+  border: solid 0.1em #FFF;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.score {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  text-align: center;
+  font-size: var(--font-size);
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+}
+
+.high-score {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+
+  font-size: var(--font-size);
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+}
+
+.game-over {
+  width: auto;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.85);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  font-size: var(--game-clear-msg-font);
+  color: rgb(255, 255, 255);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  border: 2px solid rgb(0, 255, 255);
+}
+.message {
+  font-weight: bolder;
+}
+.game-over-score {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: var(--game-clear-score-padding) 0;
+  font-size: var(--game-clear-score-msg-font);
+}
+.play-again {
+  background-color: rgb(17, 170, 25);
+  color: rgb(201, 255, 203);
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  font-size: var(--btn-font-size);
+  border-radius: 0.75rem;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+.play-again:hover {
+  padding: 1rem 2rem;
+  background-color: rgb(23, 214, 33);
+  color: rgb(254, 254, 254);
+}
+
+.BacktoHome {
+  background-color: rgb(255, 128, 0);
+  color: rgb(252, 208, 163);
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  font-size: var(--btn-font-size);
+  border-radius: 0.75rem;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.BacktoHome:hover {
+  padding: 1rem 2rem;
+  background-color: rgb(255, 163, 70);
+  ;
+  color: rgb(254, 254, 254);
+}
+
+
+.hide {
+  visibility: hidden;
+}
+
+
+.deleteEvent {
+  position: center;
+  top: 0%;
+  width: 100%;
+  background-color:rgb(255, 157, 0);
+  color: rgb(255, 255, 255);
+  padding: 1rem 1.5rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-size: var(--btn-font-size);
+  border-radius: 0.75rem;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+.deleteEvent:hover {
+  padding: 1rem 1.5rem;
+  background-color: rgb(255, 221, 165);
+  color: rgb(254, 254, 254);
+}

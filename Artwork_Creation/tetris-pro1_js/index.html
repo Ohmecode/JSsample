@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+
+  <title>tetris</title>
+</head>
+
+<body>
+
+  <button id="button" class="deleteEvent">Allow Gyro</button>
+  <canvas id="tetris" width="240" height="400"></canvas>
+
+  <div class="score"></div>
+  <div class="high-score"></div>
+
+  <div class="game-over hide">
+    <div class="message">Game Over</div>
+    <div class="game-over-score">
+
+      <div class="current"></div>
+      <div class="high"></div>
+    </div>
+    <div class="play-again">Play Again</div>
+    <div class="BacktoHome">Back to Home</div>
+
+
+    <script src="game.js"></script>
+</body>
+
+</html>
