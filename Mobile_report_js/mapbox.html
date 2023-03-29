@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>現在位置表示</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-language/v1.0.0/mapbox-gl-language.js'></script>
+
+
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div id="map">
+        
+    </div>
+    <div class="btn-area">
+        <button id="ytkh-btn"> 八束穂キャンパスに移動 </button>
+        <button id="curloca-btn"> 現在地取得 </button>
+    </div>
+    
+<h3>研究所一覧</h3>
+
+<div class="laboratory">
+    <div>
+        <h4>人間情報システム研究所（60号館）<button class="lab_map" id="HIS_lab">マップで表示</button></h4>
+            <p>人間の感覚、脳の情報システムとしての特性、微小脳システムの行動原理などの研究を通し、
+                人間と共創できる機械システムの設計を行っている。
+            </p>
+
+    </div>
+
+    <div>
+        <h4>ゲノム生物工学研究所（63号館）<button class="lab_map" id="Genome_lab">マップで表示</button></h4>
+            <p>生物情報を活用した研究に取り組み、生物機能を利用した新しい技術を育て、医療産業、食品産業、環境産業などに
+                幅広く役立つ研究を行っている。
+            </p>
+
+    </div>
+
+    <div>
+        <h4>材料システム研究所（61号館）<button class="lab_map" id="MateSys_lab">マップで表示</button></h4>
+            <p>地球環境の中で、素材から構造物に至る材料の流れをシステムとして捉え、材料を取り巻く様々な技術課題を
+                解決し、材料システムの最適化を図っている。</p>
+
+    </div>
+    <div>
+        <h4>高信頼理工学研究センター（61号館）<button class="lab_map" id="HRS61_lab">マップで表示</button></h4>
+            <p>本大学における機械、材料、センサー、デバイスの各分野における研究プロジェクトのマザーラボトリートして、
+                横断的な研究を支えている。</p>
+
+    </div>
+    <div>
+        <h4>先端材料創製技術研究所（62号館）<button class="lab_map" id="IoAM_lab">マップで表示</button></h4>
+            <p>次代を担う電子工学である超電導エレクトロニクスの分野で、脳磁計測システムの開発にあたっている。</p>
+    </div>
+    <div>
+        <h4>医工融合技術研究所（62号館）<button class="lab_map" id="IoBER_lab">マップで表示</button></h4>
+            <p>医工誘導領域での技術革新を生み出す研究拠点として設立され、以降連携推進の中心的役割を担うとともに、
+                将来的には医療技術分野での地域貢献や、北陸における医療機器開発拠点の形成を目指している。</p>
+    </div>
+    <div>
+        <h4>生活環境研究所（62号館）<button class="lab_map" id="ILE_lab">マップで表示</button></h4>
+            <p>安心・快適な生活空間を創出するための水資源循環型環境浄化システムの開発を目的とし、
+                環境汚染重金属イオン除去システムの開発を行っている。
+            </p>
+    </div>
+    <div>
+        <h4>高信頼理工学研究センター（64号館）<button class="lab_map" id="HRS64_lab">マップで表示</button></h4>
+            <p>本大学における機械、材料、センサー、デバイスの各分野における研究プロジェクトのマザーラボトリートして、
+                横断的な研究を支えている。</p>
+    </div>
+    <div>
+        <h4>情報技術AI研究所（67号館）<button class="lab_map" id="ITAL_lab">マップで表示</button></h4>
+            <p>次世代の情報社会を拓くために、人工知能応用やビッグデータの解析などに取り組んでいる。また、研究テーマ
+                を基に新しい活用分野の開拓や高度専門職業人の育成支援を行っている。
+            </p>
+    </div>
+    <div>
+        <h4>感動デザイン工学研究所（68号館）<button class="lab_map" id="IoIDE_lab">マップで表示</button></h4>
+            <p>感動の評価システムの成果を基盤とし、感動共有技術による新たなものづくりの提案をし、
+                この技術の応用と支援手法の研究を推し進めている。</p>
+    </div>
+    <div>
+        <h4>地域防災環境科学研究所（69号館）<button class="lab_map" id="IoGDPE_lab">マップで表示</button></h4>
+            <p>最新の大型研究装置を設置し、環境建造物の安全性の評価と向上に関する研究や、地球環境を考慮した
+                次世代建築・住居に関する研究などのプロジェクトを実施している。</p>
+    </div>
+    <div>
+        <h4>生体機構制御技術研究所（73号館）<button class="lab_map" id="IoBCT_lab">マップで表示</button></h4>
+            <p>工学、生物学、医学等の多岐に亘る技術情報を統合することによって、機構制御技術を工学分野に応用し、
+                ロボット開発にブレークスルーをもたらすことを目標としている。
+            </p>
+    </div>
+    <div>
+        <h4>FMT研究所（74号館）<button class="lab_map" id="FMT_lab">マップで表示</button></h4>
+            <p>機械工学、制御工学、航空工学の革新的基礎技術の創出に向け、ふせぐ、まもる、たすけるための
+                未来機械の技術開発を行っている。
+            </p>
+    </div>
+    <div>
+        <h4>航空システム工学研究所（74号館）<button class="lab_map" id="ASEL_lab">マップで表示</button></h4>
+            <p>航空システム工学科の付属研究所として、航空機の開発、設計を念頭に置いた、より実践に近い研究を行っている。</p>
+    </div>
+    <div>
+        <h4>KIT×KAJIMA 3D Printing Lab（74号館）<button class="lab_map" id="KxK3DP_lab">マップで表示</button></h4>
+            <p></p>
+    </div>
+    <div>
+        <h4>革新複合材料研究開発センター（75号館）<button class="lab_map" id="ICRDC_lab">マップで表示</button></h4>
+            <p>高機能素材や、樹木や竹、草木などのバイオマス由来の素材などの「革新複合技術」を開発し、大量生産を可能にする
+                生産・形成システムを実現している。
+            </p>
+    </div>
+    <div>
+        <h4>八束穂事務室（65号館）<button class="lab_map" id="BOSSROOM_lab">マップで表示</button></h4>
+            <p></p>
+    </div>
+    <div>
+        <h4>Restaurant ENERGY<button class="lab_map" id="RE_lab">マップで表示</button></h4>
+            <p>〇平日 11:00~15:00、16:30~20:00 〇土曜 11:00~13:30</p>
+    </div>
+    
+</div>
+
+
+<button id="Upper">⇧</button>
+
+<script src="mapbox_js.js"></script>
+
+</body>
+</html>
