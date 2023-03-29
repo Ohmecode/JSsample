@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+
+    <meta charset="UTF-8">
+    <title>カラーコード変換</title> 
+
+<header>
+<div class="box1">
+
+    <h3 style="text-align:center">カラーコード変換</h3>
+
+<form action = "ans.php" method = "post" >
+    変換したいカラーコードを入力<br/>
+    <table>
+        <tr>
+            <th>Hex</th>
+            <th style="width:20%"></th>
+            <th></th> 
+            <th>RGB</th> 
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Red</td>
+            <td><input type="text" name="Red" /></td>
+        </tr>
+        <tr>
+            <td>Hex<input type="text" name="color" /></td>
+            <td></td>
+            <td>Green</td>
+            <td><input type="text" name="Green" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Blue</td>
+            <td><input type="text" name="Blue" /></td>
+        </tr>
+        
+
+    </table>
+    <input type="radio" name = "code" value = "2"/>Hex>>>RGB
+    <input type="radio" name = "code" value = "1"/>RGB>>>Hex
+        <input type="submit" value="変換">
+
+</form>
+
+</div>
+</header>
+<body>
+    <div class="box2">
+        <h4 style="text-align:center">プログラムの説明</h4>
+        <p><b>・説明</b></p>
+        <p>・HexからRGBに変換
+            <br>HexからRGBに変換する場合、Hexのテキストボックスに16進数カラーコードであるHexの値を入力し、
+            <br>ラジオボタンの「Hex>>>RGB」を選択する。入力時、「#」の有無は関係ない。</p>
+        <p>・RGBからHexに変換</p>
+        <p>RGBからHexに変換する場合、Red、Green、Blueの3つの値を入力し、
+            <br>ラジオボタンの「RGB>>>Hex」を選択する。入力値は0～255の範囲でのみ有効。</p>
+        <p><b>・目的</b></p>
+        <p>入力したカラーコードをRGBやHexに相互変換する。
+            <br>色のサンプルを表示し、他の色との比較をする。</p>
+        <p><b>・処理</b></p>
+        <p>webコンテンツを作成する際に使用されるRGB値のカラーコードとHexのカラーコードを相互変換する。
+            <br>入力値に不備があった場合にエラーメッセージで知らせる。</p>
+        <p><b>・課題</b></p>
+        <p>カラーチャートから色の詳細と比較、コードの参照ができる。
+            <br>入力したHexとRGBのカラーコードと、色のサンプルを確認できる。</p>
+        
+    </div>
+</body>
+</html>
+<style>
+    .box1{
+        
+        padding: 0.5em 1em;
+        margin: 2%;
+        color: #5d627b;
+        background: white;
+        border-top: solid 15px #7acaff;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.22);
+    }
+    .box2{
+        padding: 0.5em 1em;
+        margin: 2%;
+        color: #5d627b;
+        background: white;
+        border-top: solid 15px #CCCCFF;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.22);
+    }
+    .box2 p{
+        margin: 0; 
+        padding: 0;
+    }
+    
+</style>
+    
+
