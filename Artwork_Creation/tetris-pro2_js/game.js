@@ -525,7 +525,7 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
             playerDrop();
         } else if (event.keyCode === 81) { //Spinning left
             playerRotate(-1);
-        } else if (event.keyCode === 87) { //Spinning right
+        } else if (event.keyCode === 69) { //Spinning right
             playerRotate(1);
         }
     });
