@@ -487,6 +487,35 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
 
     }, false);
 
+    // スマホでの操作
+    // ゲームパッド
+    const pads = navigator.getGamepads();
+    console.log(pads[0]);
+
+    // ゲームパッド接続イベント
+    //ゲームパッド接続時のイベント
+    addEventListener("gamepadconnected", (e) => {
+        //処理
+    });
+    //ゲームパッド切断時のイベント
+    addEventListener("gamepaddisconnected", (e) => {
+        //処理
+    });
+
+
+    //Aを押したとき
+    if (inputManager.checkButton("A") == inputManager.keyStatus.DOWN) {
+        if (bullet.y <= -20) {
+            bullet.clear();
+            bullet.circFill(0, 0, 4, 0xff0000);
+            bullet.y = player.y;
+            bullet.x = player.x;
+        }
+
+
+
+
+
 
 
     window.addEventListener('devicemotion', function (e) {
