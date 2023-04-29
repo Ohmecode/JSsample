@@ -488,30 +488,6 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
     }, false);
 
     // スマホでの操作
-    // ゲームパッド
-    const pads = navigator.getGamepads();
-    console.log(pads[0]);
-
-    // ゲームパッド接続イベント
-    //ゲームパッド接続時のイベント
-    addEventListener("gamepadconnected", (e) => {
-        //処理
-    });
-    //ゲームパッド切断時のイベント
-    addEventListener("gamepaddisconnected", (e) => {
-        //処理
-    });
-
-
-    //Aを押したとき
-    if (inputManager.checkButton("A") == inputManager.keyStatus.DOWN) {
-        if (bullet.y <= -20) {
-            bullet.clear();
-            bullet.circFill(0, 0, 4, 0xff0000);
-            bullet.y = player.y;
-            bullet.x = player.x;
-        }
-
 
 
 
@@ -558,6 +534,85 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
             playerRotate(1);
         }
     });
+
+    var pads, pad0;
+
+    // ゲームパッド
+    pads = navigator.getGamepads();
+    pad0 = pads[0];
+
+    console.log(pads[0]);
+    // ゲームパッド接続イベント
+
+    // x = button0
+    // o = button1
+    // □ = button2
+    // Δ = button3
+
+    // L1 = button4
+    // R1 = button5
+
+    // L2 = button6(max value = 1)
+    // R2 = button7(max value = 1)
+
+    // arrow key up = button12
+    // arrow key down = button13
+    // arrow key left = button14
+    // arrow key right = button15
+
+
+    if (pad0) {
+
+        for (var i = 0; i < pad0.buttons.length; i++) {
+
+            text('button' + i + ': ' + pad0.buttons[i].value, 10, 40 + 20 * i);
+
+            if(i == 0 && pad0.buttons[i].value == 1){
+                playerDrop();
+                console.log("down")
+            }
+        }
+
+        // if () {
+        //     playerDrop();
+        //     console.log("down");
+        // }
+    }
+
+
+    window.addEventListener("gamepadconnected", function(e){
+        console.log("Gamepad connected");
+        alert("Gamepad Connected")
+    });
+
+
+    var gamepadRunFlag = false;
+    
+    function updategamepad() {
+        var gamepads = navigator.getGamepads();
+        var gamepad = gamepads[0];
+
+        if(gamepad){
+            for(var i = 0; i < gamepad.buttons.length; i++){
+                if(gamepad.buttons[i].pressed){
+                    console.log("button" + i + "pressed");
+
+
+
+                    if (i = 0) {
+                        if (!gamepadRunFlag) {
+                                playerDrop();
+                            gamepadRunFlag = true;
+                            }
+                        } else if (0 != 0) {
+                        gamepadRunFlag = false;
+                        }
+                }
+            }
+        }
+        requestAnimationFrame(updategamepad);
+    }
+    updategamepad();
 }
 
 
