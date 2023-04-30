@@ -6,7 +6,7 @@ const context = canvas.getContext("2d");
 context.scale(20, 20);
 
 const scoreEl = document.querySelector('.score');
-const highScoreEl = document.querySelector('.high-score')
+const highScoreEl = document.querySelector('.high-score');
 const gameOverEl = document.querySelector('.game-over');
 const playAgainBtn = document.querySelector('.play-again');
 const BacktoHomeBtn = document.querySelector('.BacktoHome');
@@ -317,6 +317,7 @@ let vibrationRunFlag = false;
 let functionRun2Flag = false;
 let vibrationRun2Flag = false;
 
+
 if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
 
     //  iOS13以後iphone
@@ -515,8 +516,6 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
     }, false);
 
 
-
-
 } else {
     //コンピュータ
 
@@ -535,14 +534,8 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
         }
     });
 
-    var pads, pad0;
 
-    // ゲームパッド
-    pads = navigator.getGamepads();
-    pad0 = pads[0];
-
-    console.log(pads[0]);
-    // ゲームパッド接続イベント
+    // ゲームパッド接続イベント（修正途中です）
 
     // x = button0
     // o = button1
@@ -560,60 +553,73 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
     // arrow key left = button14
     // arrow key right = button15
 
+    // let gamepad;
+    // let RightBtnPressed = false;
+    // let LeftBtnPressed = false;
 
-    if (pad0) {
+    // function connectHandler(e) {
+    //     gamepad = e.gamepad;
+    //     console.log("Gamepad connected");
+    //     console.log("ID:" + gamepad.id);
 
-        for (var i = 0; i < pad0.buttons.length; i++) {
+    //     window.requestAnimationFrame(updategamepad);
+    // }
 
-            text('button' + i + ': ' + pad0.buttons[i].value, 10, 40 + 20 * i);
+    // function disconnectHandler(e) {
+    //     console.log("Gamepad disconnected");
+    // }
 
-            if(i == 0 && pad0.buttons[i].value == 1){
-                playerDrop();
-                console.log("down")
-            }
-        }
+    // function updategamepad() {
+    //     if (!gamepad) {
+    //         return;
+    //     }
 
-        // if () {
-        //     playerDrop();
-        //     console.log("down");
-        // }
-    }
-
-
-    window.addEventListener("gamepadconnected", function(e){
-        console.log("Gamepad connected");
-        alert("Gamepad Connected")
-    });
-
-
-    var gamepadRunFlag = false;
-    
-    function updategamepad() {
-        var gamepads = navigator.getGamepads();
-        var gamepad = gamepads[0];
-
-        if(gamepad){
-            for(var i = 0; i < gamepad.buttons.length; i++){
-                if(gamepad.buttons[i].pressed){
-                    console.log("button" + i + "pressed");
+    //     let RIGHT_BUTTON_INDEX = 15;
+    //     let LEFT_BUTTON_INDEX = 14;
 
 
+    //     for (let i = 0; i < gamepad.buttons.length; i++) {
+    //         const button = gamepad.buttons[i];
+    //         const ButtonPressed = button.pressed;
 
-                    if (i = 0) {
-                        if (!gamepadRunFlag) {
-                                playerDrop();
-                            gamepadRunFlag = true;
-                            }
-                        } else if (0 != 0) {
-                        gamepadRunFlag = false;
-                        }
-                }
-            }
-        }
-        requestAnimationFrame(updategamepad);
-    }
-    updategamepad();
+    //         if (ButtonPressed) {
+    //             if (i === RIGHT_BUTTON_INDEX && !RightBtnPressed) {
+    //                 playerMove(1);
+    //                 RightBtnPressed = true;
+    //             } else if (i === LEFT_BUTTON_INDEX && !LeftBtnPressed) {
+    //                 playerMove(-1);
+    //                 LeftBtnPressed = true;
+    //             }
+    //         } else {
+    //             if (i === RIGHT_BUTTON_INDEX) {
+    //                 RightBtnPressed = false;
+    //             } else if (i === LEFT_BUTTON_INDEX) {
+    //                 LeftBtnPressed = false;
+    //             }
+
+    //         }
+
+    //     }
+
+    //     if (!gamepad.buttons[RIGHT_BUTTON_INDEX].pressed) {
+    //         RightBtnPressed = false;
+    //     }
+    //     if (!gamepad.buttons[LEFT_BUTTON_INDEX].pressed) {
+    //         LeftBtnPressed = false;
+    //     }
+
+    //     window.requestAnimationFrame(updategamepad);
+    // }
+
+
+    // window.addEventListener("gamepadconnected", connectHandler);
+    // window.addEventListener("gamepaddisconnected", disconnectHandler);
+
+    // requestAnimationFrame(updategamepad);
+
 }
+
+
 
 
 const colors = [
