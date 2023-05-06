@@ -5,6 +5,7 @@ const canvas = document.getElementById("tetris");
 const context = canvas.getContext("2d");
 context.scale(20, 20);
 
+const timeEl = document.querySelector('.time');
 const scoreEl = document.querySelector('.score');
 const highScoreEl = document.querySelector('.high-score')
 const gameOverEl = document.querySelector('.game-over');
@@ -29,7 +30,92 @@ function arenaSweep() {
     }
 }
 
+// タイム計測用変数
+var startBtn;
+var stopBtn;
+var resetBtn;
+var TimeDisplay;
 
+var time;
+var startTime;
+var elapsedTime = 0;
+var keepTime = 0;
+
+window.onload = function () {
+    startBtn = document.getElementById("StartBtn");
+    stopBtn = document.getElementById("StopBtn");
+    resetBtn = document.getElementById("ResetBtn");
+    TimeDisplay = document.getElementById("TimeDisplay");
+}
+
+// タイム計測用関数
+
+function timeStart() {
+    startTime = Date.now();
+
+    processTime(); //計測時間
+
+    startBtn.disabled = true;
+    stopBtn.disabled = false;
+    resetBtn.disabled = false;
+}
+
+//停止
+function timeStop() {
+    clearInterval(time);
+
+    keepTime += Date.now() - startTime;
+
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
+    resetBtn.disabled = false;
+}
+
+//リセット
+function timeReset() {
+    clearInterval(time);
+
+    elapsedTime = 0;
+    keepTime = 0;
+    TimeDisplay.textContent = "00:00.000";
+
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
+    resetBtn.disabled = true;
+}
+
+function processTime() {
+    time = setTimeout(function () {
+
+        elapsedTime = Date.now() - startTime + keepTime;
+        TimeDisplay.textContent = new
+            Date(elapsedTime).toISOString().slice(14, 23);
+
+        processTime();
+    }, 10);
+}
+
+//出力時に整理する関数
+// ミリ秒をmm:ss.sss形式に変換する関数
+function msToTime(elapsedTime) {
+    // 分と秒とミリ秒を計算する
+    let minutes = Math.floor(elapsedTime / 60000);
+    let seconds = Math.floor((elapsedTime % 60000) / 1000);
+    let milliseconds = elapsedTime % 1000;
+
+    // ゼロ埋めをする
+    minutes = minutes.toString().padStart(2, "0");
+    seconds = seconds.toString().padStart(2, "0");
+    milliseconds = milliseconds.toString().padStart(3, "0");
+
+    // mm:ss.sss形式の文字列を返す
+    return `${minutes}:${seconds}.${milliseconds}s`;
+}
+
+
+button.addEventListener("click", function () {
+    timeStart();
+});
 
 function collide(arena, player) {
 
@@ -560,16 +646,20 @@ function BACKHOME() {
 }
 
 function gameOver() {
-
+    //ストップウォッチ停止
+    timeStop()
     const scoreEl = document.querySelector('.game-over-score .current');
     const highScoreEl = document.querySelector('.game-over-score .high');
+    const Measurement_Result = document.querySelector('.game-over-score .Meas_Result');
 
     //ハイスコアの更新
     highScore = Math.max(player.score, highScore);
     localStorage.setItem('high-score', highScore);
+    let result = msToTime(elapsedTime);
 
     scoreEl.innerHTML = `score ${player.score}`;
     highScoreEl.innerHTML = `🏆${highScore}`;
+    Measurement_Result.innerHTML = `⌚ ${result}`;
 
 
     gameOverEl.classList.remove('hide');
@@ -577,6 +667,8 @@ function gameOver() {
 
 playAgainBtn.addEventListener('click', restartGame);
 function restartGame() {
+    timeReset()
+    timeStart()
 
 
     arena.forEach((row) => row.fill(0));

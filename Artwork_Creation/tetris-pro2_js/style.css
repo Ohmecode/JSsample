@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+
 body{
     overflow: hidden;
     background:#554c4c ;
@@ -129,4 +131,13 @@ canvas {
   padding: 1rem 1.5rem;
   background-color: rgb(255, 221, 165);
   color: rgb(254, 254, 254);
+}
+
+
+#TimeDisplay{
+  position: absolute;
+  top: 60px;
+  margin-left: 13px;
+  font-size: 20px;
+  font-family: 'Comfortaa', bold;
 }
