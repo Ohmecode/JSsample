@@ -30,7 +30,7 @@ function arenaSweep() {
 }
 
 // タイム計測用変数
-var startBtn; 
+var startBtn;
 var stopBtn;
 var resetBtn;
 var TimeDisplay;
@@ -49,7 +49,7 @@ window.onload = function () {
 
 // タイム計測用関数
 
-function timeStart(){
+function timeStart() {
     startTime = Date.now();
 
     processTime(); //計測時間
@@ -88,10 +88,10 @@ function processTime() {
 
         elapsedTime = Date.now() - startTime + keepTime;
         TimeDisplay.textContent = new
-        Date(elapsedTime) .toISOString().slice(14,23);
+            Date(elapsedTime).toISOString().slice(14, 23);
 
         processTime();
-    },10);
+    }, 10);
 }
 
 //出力時に整理する関数
@@ -411,7 +411,7 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
             .then(response => {
                 if (response === 'granted') {
                     window.addEventListener('deviceorientation', function (event) {
-                        
+
                         var gamma = event.gamma;
                         var beta = event.beta;
                         let current;
@@ -617,93 +617,85 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
             playerRotate(1);
         }
     });
-
-
-    // ゲームパッド接続イベント（修正途中です）
-
-    // x = button0
-    // o = button1
-    // □ = button2
-    // Δ = button3
-
-    // L1 = button4
-    // R1 = button5
-
-    // L2 = button6(max value = 1)
-    // R2 = button7(max value = 1)
-
-    // arrow key up = button12
-    // arrow key down = button13
-    // arrow key left = button14
-    // arrow key right = button15
-
-    // let gamepad;
-    // let RightBtnPressed = false;
-    // let LeftBtnPressed = false;
-
-    // function connectHandler(e) {
-    //     gamepad = e.gamepad;
-    //     console.log("Gamepad connected");
-    //     console.log("ID:" + gamepad.id);
-
-    //     window.requestAnimationFrame(updategamepad);
-    // }
-
-    // function disconnectHandler(e) {
-    //     console.log("Gamepad disconnected");
-    // }
-
-    // function updategamepad() {
-    //     if (!gamepad) {
-    //         return;
-    //     }
-
-    //     let RIGHT_BUTTON_INDEX = 15;
-    //     let LEFT_BUTTON_INDEX = 14;
-
-
-    //     for (let i = 0; i < gamepad.buttons.length; i++) {
-    //         const button = gamepad.buttons[i];
-    //         const ButtonPressed = button.pressed;
-
-    //         if (ButtonPressed) {
-    //             if (i === RIGHT_BUTTON_INDEX && !RightBtnPressed) {
-    //                 playerMove(1);
-    //                 RightBtnPressed = true;
-    //             } else if (i === LEFT_BUTTON_INDEX && !LeftBtnPressed) {
-    //                 playerMove(-1);
-    //                 LeftBtnPressed = true;
-    //             }
-    //         } else {
-    //             if (i === RIGHT_BUTTON_INDEX) {
-    //                 RightBtnPressed = false;
-    //             } else if (i === LEFT_BUTTON_INDEX) {
-    //                 LeftBtnPressed = false;
-    //             }
-
-    //         }
-
-    //     }
-
-    //     if (!gamepad.buttons[RIGHT_BUTTON_INDEX].pressed) {
-    //         RightBtnPressed = false;
-    //     }
-    //     if (!gamepad.buttons[LEFT_BUTTON_INDEX].pressed) {
-    //         LeftBtnPressed = false;
-    //     }
-
-    //     window.requestAnimationFrame(updategamepad);
-    // }
-
-
-    // window.addEventListener("gamepadconnected", connectHandler);
-    // window.addEventListener("gamepaddisconnected", disconnectHandler);
-
-    // requestAnimationFrame(updategamepad);
-
 }
 
+// ゲームパッド接続イベント（修正途中です）
 
+// x = button0
+// o = button1
+// □ = button2
+// Δ = button3
+
+// L1 = button4
+// R1 = button5
+
+// L2 = button6(max value = 1)
+// R2 = button7(max value = 1)
+
+// arrow key up = button12
+// arrow key down = button13
+// arrow key left = button14
+// arrow key right = button15
+
+let gamepad;
+let RightBtnPressed = false;
+let LeftBtnPressed = false;
+
+function connectHandler(e) {
+    gamepad = e.gamepad;
+    console.log("Gamepad connected");
+    console.log("ID:" + gamepad.id);
+
+    window.requestAnimationFrame(updategamepad);
+}
+
+function disconnectHandler(e) {
+    console.log("Gamepad disconnected");
+}
+
+function updategamepad() {
+    if (!gamepad) {
+        return;
+    }
+
+    let RIGHT_BUTTON_INDEX = 15;
+    let LEFT_BUTTON_INDEX = 14;
+
+    for (let i = 0; i < gamepad.buttons.length; i++) {
+        const button = gamepad.buttons[i];
+        const ButtonPressed = button.pressed;
+
+        if (ButtonPressed) {
+            if (i === RIGHT_BUTTON_INDEX && !RightBtnPressed) {
+                playerMove(1);
+                console.log("arrowkey right")
+                RightBtnPressed = true;
+            } else if (i === LEFT_BUTTON_INDEX && !LeftBtnPressed) {
+                playerMove(-1);
+                console.log("arrowkey left")
+                LeftBtnPressed = true;
+            }
+        } else {
+            if (i === RIGHT_BUTTON_INDEX) {
+                RightBtnPressed = false;
+            } else if (i === LEFT_BUTTON_INDEX) {
+                LeftBtnPressed = false;
+            }
+        }
+    }
+    if (!gamepad.buttons[RIGHT_BUTTON_INDEX].pressed) {
+        RightBtnPressed = false;
+    }
+    if (!gamepad.buttons[LEFT_BUTTON_INDEX].pressed) {
+        LeftBtnPressed = false;
+    }
+    window.requestAnimationFrame(updategamepad);
+}
+
+window.addEventListener("gamepadconnected", connectHandler);
+window.addEventListener("gamepaddisconnected", disconnectHandler);
+
+requestAnimationFrame(updategamepad);
 
 
 const colors = [
@@ -726,7 +718,6 @@ const player = {
 playerReset();
 updateScore();
 update();
-
 
 BacktoHomeBtn.addEventListener('click', BACKHOME);
 function BACKHOME() {
@@ -756,7 +747,7 @@ playAgainBtn.addEventListener('click', restartGame);
 function restartGame() {
     timeReset()
     timeStart()
-    
+
     arena.forEach((row) => row.fill(0));
     player.score = 0;
     updateScore();

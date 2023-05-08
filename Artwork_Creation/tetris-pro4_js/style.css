@@ -11,11 +11,11 @@ body{
 
 canvas {
   position: center;
-  border: solid 0.1em #FFF;
+  border: solid 0.1em #ffffff;
   width: 100%;
   height: 100%;
   left: 0;
-  top: 0;
+  margin-top: 80px;
 }
 
 .score {
@@ -25,7 +25,7 @@ canvas {
   text-align: center;
   font-size: var(--font-size);
 
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Comfortaa', bold;
   font-weight: bolder;
 }
 
@@ -36,7 +36,7 @@ canvas {
 
   font-size: var(--font-size);
 
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Comfortaa', bold;
   font-weight: bolder;
 }
 
@@ -58,7 +58,7 @@ canvas {
 
   font-size: var(--game-clear-msg-font);
   color: rgb(255, 255, 255);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Comfortaa', bold;
 
   border: 2px solid rgb(0, 255, 255);
 }
@@ -113,23 +113,36 @@ canvas {
 
 
 .deleteEvent {
-  position: center;
-  top: 0%;
-  width: 100%;
-    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  color: rgb(255, 255, 255);
-  padding: 1rem 1.5rem;
-  margin-top: 0.5rem;
-  font-weight: bold;
+display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
   font-size: var(--btn-font-size);
-  border-radius: 0.75rem;
-  transition: all 200ms ease-in-out;
-  cursor: pointer;
+	width:100%;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	border: 2px solid linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+	background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+	color: #fff;
+	border-radius: 5px;
+	transition: 0.5s;
+	animation: move_d 2s infinite;
+	box-shadow: 0 5px 0 rgba(64, 164, 41,0);
+	position: relative;
 }
+@keyframes move_d {
+    0% {box-shadow: 0 5px 0 rgba(64, 164, 41,0); top: 0px;}
+    10% {box-shadow: 0 0 0 rgba(64, 164, 41,0); top: 5px;}
+    20% {box-shadow: 0 5px 0 rgba(64, 164, 41,0); top: 0px;}
+    30% {box-shadow: 0 0 0 rgba(64, 164, 41,0); top: 5px;}
+    40% {box-shadow: 0 5px 0 rgba(64, 164, 41,0); top: 0px;}
+}
+
 .deleteEvent:hover {
-  padding: 1rem 1.5rem;
-  background: linear-gradient(60deg, #f7b933, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b);
-  color: rgb(254, 254, 254);
+  color: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+	background: #fff;
+	border: 2px solid rgba(64, 164, 41,0);
 }
 
 #TimeDisplay{
@@ -140,3 +153,23 @@ canvas {
   font-family: 'Comfortaa', bold;
 }
 
+button {
+  margin-top: 10px;
+  padding: 20px 0;
+  font-size: 15px;
+  display: inline-block;
+  padding: .8rem 1.6rem;
+  border: none;
+  color: #FFF;
+  background:linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: 15px;
+  font-family: 'Comfortaa', bold;
+}
+button:hover {
+  cursor: pointer;
+  background: linear-gradient(60deg, #eecba8, #eeb0a4, #e597ad, #d6a5df, #a0b9e9, #6dc6d4, #7ad7cb, #bde0c6);
+}
+button:disabled {
+  cursor: default;
+  background: linear-gradient(60deg, #f7953374, #f36f5577, #ef4e7c84, #a166ab7c, #5073b86e, #1098ad65, #07b39c5c, #6fba827d);
+}

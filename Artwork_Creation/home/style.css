@@ -56,22 +56,26 @@ hr.slidebtmhr {
     transform: rotate(4deg);
     margin-top: 50px;
     margin-bottom: 30px;
+    -webkit-filter: drop-shadow(0px 4px 0 #CF71A6) drop-shadow(0px 8px 0 #CF71A6) drop-shadow(0px 12px 0 #CF71A6) drop-shadow(0px 16px 0 #CF71A6) drop-shadow(0px 20px 0 #CF71A6) drop-shadow(0px 24px 0 #CF71A6);
     filter: drop-shadow(0px 4px 0 #CF71A6) drop-shadow(0px 8px 0 #CF71A6) drop-shadow(0px 12px 0 #CF71A6) drop-shadow(0px 16px 0 #CF71A6) drop-shadow(0px 20px 0 #CF71A6) drop-shadow(0px 24px 0 #CF71A6);
+    transform: translateZ(0);
 }
 
 .hr-top {
     margin-top: 100px;
     border-top: 5px solid;
     transform: rotate(-3deg);
-    filter: drop-shadow(0.2px -3px 0 #CF71A6) drop-shadow(0.5px -8px 0 #CF71A6) drop-shadow(0.8px -12px 0 #CF71A6) drop-shadow(1.1px -16px 0 #CF71A6) drop-shadow(1.4px -20px 0 #CF71A6) drop-shadow(1.7px -24px 0 #CF71A6) drop-shadow(2px -28px 0 #CF71A6) drop-shadow(2.3px -32px 0 #CF71A6) drop-shadow(0px 4px 0 #FCFDFF) drop-shadow(0px 8px 0 #FCFDFF) drop-shadow(0px 12px 0 #FCFDFF);
+    filter: -webkit-drop-shadow(0.2px -3px 0 #CF71A6) -webkit-drop-shadow(0.5px -8px 0 #CF71A6) -webkit-drop-shadow(0.8px -12px 0 #CF71A6) -webkit-drop-shadow(1.1px -16px 0 #CF71A6) -webkit-drop-shadow(1.4px -20px 0 #CF71A6) -webkit-drop-shadow(1.7px -24px 0 #CF71A6) -webkit-drop-shadow(2px -28px 0 #CF71A6) -webkit-drop-shadow(2.3px -32px 0 #CF71A6) -webkit-drop-shadow(0px 4px 0 #FCFDFF) -webkit-drop-shadow(0px 8px 0 #FCFDFF) -webkit-drop-shadow(0px 12px 0 #FCFDFF);
+filter: drop-shadow(0.2px -3px 0 #CF71A6) drop-shadow(0.5px -8px 0 #CF71A6) drop-shadow(0.8px -12px 0 #CF71A6) drop-shadow(1.1px -16px 0 #CF71A6) drop-shadow(1.4px -20px 0 #CF71A6) drop-shadow(1.7px -24px 0 #CF71A6) drop-shadow(2px -28px 0 #CF71A6) drop-shadow(2.3px -32px 0 #CF71A6) drop-shadow(0px 4px 0 #FCFDFF) drop-shadow(0px 8px 0 #FCFDFF) drop-shadow(0px 12px 0 #FCFDFF);
 }
 
 .hr-central {
     margin-top: 100px;
     border-top: 5px solid;
     transform: rotate(5deg);
-    filter:
-        drop-shadow(0px -4px 0 #FCFDFF) drop-shadow(0px -8px 0 #FCFDFF) drop-shadow(0px -12px 0 #FCFDFF) drop-shadow(0px -16px 0 #FCFDFF) drop-shadow(0px -20px 0 #FCFDFF) drop-shadow(1px 4px 0 #7B9ECE) drop-shadow(1px 8px 0 #7B9ECE) drop-shadow(1px 12px 0 #7B9ECE) drop-shadow(1px 16px 0 #7B9ECE) drop-shadow(1px 20px 0 #7B9ECE);
+    filter: -webkit-drop-shadow(0px -4px 0 #FCFDFF) -webkit-drop-shadow(0px -8px 0 #FCFDFF) -webkit-drop-shadow(0px -12px 0 #FCFDFF) -webkit-drop-shadow(0px -16px 0 #FCFDFF) -webkit-drop-shadow(0px -20px 0 #FCFDFF) -webkit-drop-shadow(1px 4px 0 #7B9ECE) -webkit-drop-shadow(1px 8px 0 #7B9ECE) -webkit-drop-shadow(1px 12px 0 #7B9ECE) -webkit-drop-shadow(1px 16px 0 #7B9ECE) -webkit-drop-shadow(1px 20px 0 #7B9ECE);
+    filter: drop-shadow(0px -4px 0 #FCFDFF) drop-shadow(0px -8px 0 #FCFDFF) drop-shadow(0px -12px 0 #FCFDFF) drop-shadow(0px -16px 0 #FCFDFF) drop-shadow(0px -20px 0 #FCFDFF) drop-shadow(1px 4px 0 #7B9ECE) drop-shadow(1px 8px 0 #7B9ECE) drop-shadow(1px 12px 0 #7B9ECE) drop-shadow(1px 16px 0 #7B9ECE) drop-shadow(1px 20px 0 #7B9ECE);
+        
 }
 
 .hr-bottom {

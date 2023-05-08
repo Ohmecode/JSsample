@@ -9,19 +9,13 @@ body{
     text-align: center;
 }
 
-/* canvas{
-    border: solid 0.1em #FFF;
-width: auto;
-    height: 90vh;
-} */
-
 canvas {
   position: center;
-  border: solid 0.1em #FFF;
+  border: solid 0.1em #ffffff;
   width: 100%;
   height: 100%;
   left: 0;
-  top: 0;
+  margin-top: 80px;
 }
 
 .score {
@@ -30,8 +24,7 @@ canvas {
   left: 20px;
   text-align: center;
   font-size: var(--font-size);
-
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Comfortaa', bold;
   font-weight: bolder;
 }
 
@@ -42,14 +35,13 @@ canvas {
 
   font-size: var(--font-size);
 
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Comfortaa', bold;
   font-weight: bolder;
 }
 
 .game-over {
   width: auto;
   height: 100%;
-
   position: absolute;
   top: 0;
   left: 0;
@@ -64,7 +56,7 @@ canvas {
 
   font-size: var(--game-clear-msg-font);
   color: rgb(255, 255, 255);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Comfortaa', bold;
 
   border: 2px solid rgb(0, 255, 255);
 }
@@ -118,27 +110,37 @@ canvas {
   visibility: hidden;
 }
 
-
 .deleteEvent {
-  position: center;
-  top: 0%;
-  width:100%;
-  background-color:rgb(91, 235, 59);
-  color: rgb(255, 255, 255);
-  padding: 1rem 1.5rem;
-  margin-top: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: bold;
+display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
   font-size: var(--btn-font-size);
-  border-radius: 0.75rem;
-  transition: all 200ms ease-in-out;
-  cursor: pointer;
+	width:100%;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	border: 2px solid rgb(91, 235, 59);
+	background: rgb(91, 235, 59);
+	color: #fff;
+	border-radius: 5px;
+	transition: 0.5s;
+	animation: move_d 2s infinite;
+	box-shadow: 0 5px 0 rgba(64, 164, 41,0);
+	position: relative;
 }
+@keyframes move_d {
+    0% {box-shadow: 0 5px 0 rgba(64, 164, 41,0); top: 0px;}
+    10% {box-shadow: 0 0 0 rgba(64, 164, 41,0); top: 5px;}
+    20% {box-shadow: 0 5px 0 rgba(64, 164, 41,0); top: 0px;}
+    30% {box-shadow: 0 0 0 rgba(64, 164, 41,0); top: 5px;}
+    40% {box-shadow: 0 5px 0 rgba(64, 164, 41,0); top: 0px;}
+}
+
 .deleteEvent:hover {
-  padding: 1rem 1.5rem;
-  background-color: rgb(98, 170, 81);
-  color: rgb(254, 254, 254);
+  color: rgb(91, 235, 59);
+	background: #fff;
+	border: 2px solid rgba(64, 164, 41,0);
 }
 
 #TimeDisplay{
@@ -147,5 +149,26 @@ canvas {
   margin-left: 13px;
   font-size: 20px;
   font-family: 'Comfortaa', bold;
+}
+
+button {
+  margin-top: 10px;
+  padding: 20px 0;
+  font-size: 15px;
+  display: inline-block;
+  padding: .8rem 1.6rem;
+  border: none;
+  color: #FFF;
+  background-color: #82df57;
+  border-radius: 15px;
+  font-family: 'Comfortaa', bold;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #87cd67;
+}
+button:disabled {
+  cursor: default;
+  background-color: #4d9d28;
 }
 
