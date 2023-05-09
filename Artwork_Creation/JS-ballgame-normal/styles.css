@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
 *, *::after, *::before {
   box-sizing: border-box;
 }
@@ -69,24 +70,39 @@ body {
 }
 
 .deleteEvent {
-  position: center;
-  top: 0%;
-  width: 100%;
-  background-color:rgb(235, 165, 59);
-  color: rgb(255, 255, 255);
-  padding: 1rem 1.5rem;
-  margin-top: 0.5rem;
-  font-weight: bold;
+    font-family: 'Comfortaa', bold;
+display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
   font-size: var(--btn-font-size);
-  border-radius: 0.75rem;
-  transition: all 200ms ease-in-out;
-  cursor: pointer;
+	width:100%;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	border: 2px solid rgb(255, 157, 0);;
+	background: rgb(255, 157, 0);;
+	color: #fff;
+	border-radius: 5px;
+	transition: 0.5s;
+	animation: move_d 2s infinite;
+	box-shadow: 0 5px 0 rgba(64, 164, 41,0);
+	position: relative;
 }
+@keyframes move_d {
+    0% {box-shadow: 0 5px 0 rgba(64, 164, 41,0); top: 0px;}
+    10% {box-shadow: 0 0 0 rgba(64, 164, 41,0); top: 5px;}
+    20% {box-shadow: 0 5px 0 rgba(64, 164, 41,0); top: 0px;}
+    30% {box-shadow: 0 0 0 rgba(64, 164, 41,0); top: 5px;}
+    40% {box-shadow: 0 5px 0 rgba(64, 164, 41,0); top: 0px;}
+}
+
 .deleteEvent:hover {
-  padding: 2rem 2rem;
-  background-color: rgb(170, 123, 81);
-  color: rgb(254, 254, 254);
+  color: rgb(255, 157, 0);
+	background: #fff;
+	border: 2px solid rgba(64, 164, 41,0);
 }
+
 
 
 
