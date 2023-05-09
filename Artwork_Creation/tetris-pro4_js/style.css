@@ -12,30 +12,24 @@ body{
 canvas {
   position: center;
   border: solid 0.1em #ffffff;
-  width: 100%;
-  height: 100%;
+  width: 98%;
   left: 0;
-  margin-top: 80px;
 }
 
 .score {
   position: absolute;
-  top: 15px;
-  left: 20px;
+  top: 14px;
+  left: 30px;
   text-align: center;
-  font-size: var(--font-size);
-
+  font-size: 27px;
   font-family: 'Comfortaa', bold;
   font-weight: bolder;
 }
-
 .high-score {
   position: absolute;
-  top: 15px;
-  right: 20px;
-
-  font-size: var(--font-size);
-
+  top: 14px;
+  right: 30px;
+  font-size: 27px;
   font-family: 'Comfortaa', bold;
   font-weight: bolder;
 }
@@ -147,11 +141,12 @@ display: block;
 
 #TimeDisplay{
   position: absolute;
-  top: 60px;
-  margin-left: 13px;
-  font-size: 20px;
+  top: 50px;
+  margin-left: 26px;
+  font-size: 15px;
   font-family: 'Comfortaa', bold;
 }
+
 
 button {
   margin-top: 10px;
