@@ -150,6 +150,22 @@ document.getElementById("playtetris-bakemon").addEventListener("click", function
 }, false);
 
 
+// ゲームパッド版のテトリス
+document.getElementById("playtetris-easy-gamepad").addEventListener("click", function () {
+    location = '../tetris-pro1-gamepad_js/index.html'
+}, false);
+
+document.getElementById("playtetris-normal-gamepad").addEventListener("click", function () {
+    location = '../tetris-pro2-gamepad_js/index.html'
+}, false);
+
+document.getElementById("playtetris-hard-gamepad").addEventListener("click", function () {
+    location = '../tetris-pro3-gamepad_js/index.html'
+}, false);
+
+document.getElementById("playtetris-bakemon-gamepad").addEventListener("click", function () {
+    location = '../tetris-pro4-gamepad_js/index.html'
+}, false);
 
 
 

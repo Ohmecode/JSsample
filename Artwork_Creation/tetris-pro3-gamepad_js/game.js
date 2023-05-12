@@ -1,12 +1,13 @@
 "use strict";
 
+
 const canvas = document.getElementById("tetris");
 const context = canvas.getContext("2d");
 context.scale(20, 20);
 
 const timeEl = document.querySelector('.time');
 const scoreEl = document.querySelector('.score');
-const highScoreEl = document.querySelector('.high-score');
+const highScoreEl = document.querySelector('.high-score')
 const gameOverEl = document.querySelector('.game-over');
 const playAgainBtn = document.querySelector('.play-again');
 const BacktoHomeBtn = document.querySelector('.BacktoHome');
@@ -365,7 +366,7 @@ function playerRotate(dir) {
 
 
 let dropCounter = 0;
-let dropInterval = 1200;
+let dropInterval = 400;
 let lastTime = 0;
 
 function update(time = 0) {
@@ -396,228 +397,6 @@ $(function () {
 });
 
 
-
-let functionRunFlag = false;
-let vibrationRunFlag = false;
-let functionRun2Flag = false;
-let vibrationRun2Flag = false;
-
-
-if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
-
-    //  iOS13以後iphone
-    button.onclick = () => {
-        DeviceOrientationEvent.requestPermission()
-            .then(response => {
-                if (response === 'granted') {
-                    window.addEventListener('deviceorientation', function (event) {
-
-                        var gamma = event.gamma;
-                        var beta = event.beta;
-                        let current;
-
-                        //right left shifts
-                        if (gamma < 60) {
-                            current = player.pos.x;
-                            player.pos.x = 5 + Math.floor(gamma / 10);
-                            if (collide(arena, player)) {
-                                player.pos.x = current;
-                            }
-                        }
-                        // //Spinning right
-                        // if (beta > 35) {
-                        //     if (!functionRunFlag) {
-                        //         if (navigator.userAgent.match(/(Android)/i)) {
-                        //             //20ms振動、10ms止める、20ms振動、
-                        //             window.navigator.vibrate([20]);
-                        //         }
-                        //         playerRotate(1);
-                        //         functionRunFlag = true;
-                        //     }
-                        // } else if (beta < 35) {
-                        //     functionRunFlag = false;
-                        // }
-
-                        // if (beta < 35) {
-                        //     if (!vibrationRunFlag) {
-                        //         if (navigator.userAgent.match(/(Android)/i)) {
-                        //             //20ms振動、10ms止める、20ms振動、
-                        //             window.navigator.vibrate([20, 10, 30]);
-                        //         }
-                        //         vibrationRunFlag = true;
-                        //     }
-                        // } else if (beta > 35) {
-                        //     vibrationRunFlag = false;
-                        // }
-
-
-                        // //Spinning left
-                        // if (beta < -5) {
-                        //     if (!functionRun2Flag) {
-                        //         if (navigator.userAgent.match(/(Android)/i)) {
-                        //             window.navigator.vibrate([20]);
-                        //         }
-                        //         playerRotate(-1);
-                        //         functionRun2Flag = true;
-                        //     }
-                        // } else if (beta > -5) {
-                        //     functionRun2Flag = false;
-                        // }
-
-                        // if (beta > -5) {
-                        //     if (!vibrationRun2Flag) {
-                        //         if (navigator.userAgent.match(/(Android)/i)) {
-                        //             window.navigator.vibrate([20, 10, 30]);
-                        //         }
-                        //         vibrationRun2Flag = true;
-                        //     }
-                        // } else if (beta < -5) {
-                        //     vibrationRun2Flag = false;
-                        // }
-
-                    }, true);
-
-                    window.addEventListener('devicemotion', function (e) {
-
-                        var az = e.acceleration.z
-
-                        //Spinning right
-                        if (az > 15) {
-                            if (!functionRunFlag) {
-                                if (navigator.userAgent.match(/(Android)/i)) {
-                                    //20ms振動、10ms止める、20ms振動、
-                                    window.navigator.vibrate([30]);
-                                }
-                                playerRotate(1);
-                                functionRunFlag = true;
-                            }
-                        } else if (az <= 1 || az >= -1) {
-                            functionRunFlag = false;
-                        }
-
-                    }, false);
-
-
-                }
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
-    //スマホでの操作
-    //  Androidスマートフォン
-    window.addEventListener('deviceorientation', function (event) {
-        var gamma = event.gamma;
-        var beta = event.beta;
-        let current;
-
-        //right left shifts
-        if (gamma < 60) {
-            current = player.pos.x;
-            player.pos.x = 5 + Math.floor(gamma / 10);
-            if (collide(arena, player)) {
-                player.pos.x = current;
-            }
-        }
-        // //Spinning right
-        // if (beta > 35) {
-        //     if (!functionRunFlag) {
-        //         if (navigator.userAgent.match(/(Android)/i)) {
-        //             //20ms振動、10ms止める、20ms振動、
-        //             window.navigator.vibrate([20]);
-        //         }
-        //         playerRotate(1);
-        //         functionRunFlag = true;
-        //     }
-        // } else if (beta < 35) {
-        //     functionRunFlag = false;
-        // }
-
-        // if (beta < 35) {
-        //     if (!vibrationRunFlag) {
-        //         if (navigator.userAgent.match(/(Android)/i)) {
-        //             //20ms振動、10ms止める、20ms振動、
-        //             window.navigator.vibrate([20, 10, 30]);
-        //         }
-        //         vibrationRunFlag = true;
-        //     }
-        // } else if (beta > 35) {
-        //     vibrationRunFlag = false;
-        // }
-
-
-        // //Spinning left
-        // if (beta < -5) {
-        //     if (!functionRun2Flag) {
-        //         if (navigator.userAgent.match(/(Android)/i)) {
-        //             window.navigator.vibrate([20]);
-        //         }
-        //         playerRotate(-1);
-        //         functionRun2Flag = true;
-        //     }
-        // } else if (beta > -5) {
-        //     functionRun2Flag = false;
-        // }
-
-        // if (beta > -5) {
-        //     if (!vibrationRun2Flag) {
-        //         if (navigator.userAgent.match(/(Android)/i)) {
-        //             window.navigator.vibrate([20, 10, 30]);
-        //         }
-        //         vibrationRun2Flag = true;
-        //     }
-        // } else if (beta < -5) {
-        //     vibrationRun2Flag = false;
-        // }
-
-    }, false);
-
-    // スマホでの操作
-
-
-
-
-
-
-    window.addEventListener('devicemotion', function (e) {
-
-        var az = e.acceleration.z
-
-        //Spinning right
-        if (az > 15) {
-            if (!functionRunFlag) {
-                if (navigator.userAgent.match(/(Android)/i)) {
-                    //20ms振動、10ms止める、20ms振動、
-                    window.navigator.vibrate([30]);
-                }
-                playerRotate(1);
-                functionRunFlag = true;
-            }
-        } else if (az <= 1 || az >= -1) {
-            functionRunFlag = false;
-        }
-
-    }, false);
-
-
-} else {
-    //コンピュータ
-
-    document.addEventListener("keydown", (event) => {
-
-        if (event.keyCode === 37) { //Left
-            playerMove(-1);
-        } else if (event.keyCode === 39) { //Right
-            playerMove(1);
-        } else if (event.keyCode === 40) { //Down
-            playerDrop();
-        } else if (event.keyCode === 81) { //Spinning left
-            playerRotate(-1);
-        } else if (event.keyCode === 69) { //Spinning right
-            playerRotate(1);
-        }
-    });
-}
 
 // ゲームパッド接続イベント（修正途中です）
 
@@ -829,7 +608,6 @@ function monitorGamepadInput() {
 window.addEventListener("gamepadconnected", onGamepadConnected);
 window.addEventListener("gamepaddisconnected", onGamepadDisconnected);
 
-
 const colors = [
     null,
     "#0dc2ff",//I
@@ -851,18 +629,19 @@ playerReset();
 updateScore();
 update();
 
+
 BacktoHomeBtn.addEventListener('click', BACKHOME);
 function BACKHOME() {
     location = '../home/home.html'
 }
 
 function gameOver() {
-
     //ストップウォッチ停止
     timeStop()
     const scoreEl = document.querySelector('.game-over-score .current');
     const highScoreEl = document.querySelector('.game-over-score .high');
     const Measurement_Result = document.querySelector('.game-over-score .Meas_Result');
+
     //ハイスコアの更新
     highScore = Math.max(player.score, highScore);
     localStorage.setItem('high-score', highScore);
@@ -872,6 +651,7 @@ function gameOver() {
     highScoreEl.innerHTML = `🏆${highScore}`;
     Measurement_Result.innerHTML = `⌚ ${result}`;
 
+
     gameOverEl.classList.remove('hide');
 }
 
@@ -879,6 +659,7 @@ playAgainBtn.addEventListener('click', restartGame);
 function restartGame() {
     timeReset()
     timeStart()
+
 
     arena.forEach((row) => row.fill(0));
     player.score = 0;
@@ -888,3 +669,5 @@ function restartGame() {
     gameOverEl.classList.add('hide');
 
 }
+
+

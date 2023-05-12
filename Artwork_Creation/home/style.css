@@ -46,6 +46,7 @@ h3 {
 }
 
 
+
 .difficulty-table {
     margin: auto;
     font-family: 'Comfortaa', bold;
@@ -212,7 +213,7 @@ p {
     transition: 200ms;
 }
 
-.btn-bakemon {
+.btn-gamepad {
     margin-top: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -220,14 +221,14 @@ p {
     font-family: 'Comfortaa', bold;
     border-width: 3px;
     border-color: #000;
-    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-    color: #ffffff;
+    background-color: #B8D46B;
+    color: #000;
     padding: 5px 40px 5px 40px;
     filter: drop-shadow(-6px 6px 0px #000);
     transition: 200ms;
 }
 
-.btn-bakemon:hover {
+.btn-gamepad:hover {
     display: block;
     margin: 0 0 0 auto;
     margin-top: 26px;
@@ -236,11 +237,12 @@ p {
     text-align: center;
     font-family: 'Comfortaa', bold;
     border-color: #000;
-    background: linear-gradient(60deg, #f7b933, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b);
+    background-color: #B8D46B;
     padding: 5px 40px 5px 40px;
     filter: drop-shadow(0px 0px 0px #000000);
     transition: 200ms;
 }
+
 
 
 /* slideshow */
