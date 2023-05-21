@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Browser test</title>
+    <link rel="stylesheet" href="https://unpkg.com/vuesalize@2.1.0/dist/vuesalize.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vuesalize@2.1.0/dist/vuesalize.umd.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <loader-spinning></loader-spinning>
+        <stacked-bar-chart :plot-data="barchartdata" x-key="date"></stacked-bar-chart>
+    </div>
+
+    <script>
+        const { createApp } = Vue
+
+        const app = createApp({
+            data() {
+                return {
+                    barchartdata: [
+                        { "date": 2019, "Utilities": 21, "Rent": 16, "Insurance": 22 },
+                        { "date": 2020, "Utilities": 19, "Rent": 10, "Insurance": 17 },
+                    ]
+                }
+            }
+        })
+
+        app.use(Vuesalize)
+
+        app.mount('#app')
+
+    </script>
+    
+</body>
+
+</html>
