@@ -364,9 +364,10 @@ function playerRotate(dir) {
     }
 }
 
+//150 コントローラ ちょうどいい
 
 let dropCounter = 0;
-let dropInterval = 140;
+let dropInterval = 135;
 let lastTime = 0;
 
 function update(time = 0) {

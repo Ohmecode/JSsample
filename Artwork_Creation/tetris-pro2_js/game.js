@@ -662,6 +662,7 @@ let prevRightPressed = false;
 let prevL1Pressed = false;
 let prevR1Pressed = false;
 
+
 // ボタンを押した時間と話した時間を記憶
 let leftPressedTime = 0;
 let leftReleasedTime = 0;
@@ -687,6 +688,8 @@ function monitorGamepadInput() {
     let right = 15;
     let l1 = 4;
     let r1 = 5;
+
+
 
     // ゲームパッドの配列を取得
     let gamepads = navigator.getGamepads();
