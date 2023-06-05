@@ -438,10 +438,10 @@ function onGamepadDisconnected(event) {
 
 // 前のフレームでのキーのボタンの状態を記憶する変数（初期値はfalse）
 let prevUpPressed = false;
-let prevDownPressed = false;
+// let prevDownPressed = false;
 let prevLeftPressed = false;
 let prevRightPressed = false;
-let prevL1Pressed = false;
+// let prevL1Pressed = false;
 let prevR1Pressed = false;
 
 // ボタンを押した時間と話した時間を記憶
@@ -449,10 +449,10 @@ let leftPressedTime = 0;
 let leftReleasedTime = 0;
 let rightPressedTime = 0;
 let rightReleasedTime = 0;
-let downPressedTime = 0;
-let downReleasedTime = 0;
-let l1PressedTime = 0;
-let l1ReleasedTime = 0;
+// let downPressedTime = 0;
+// let downReleasedTime = 0;
+// let l1PressedTime = 0;
+// let l1ReleasedTime = 0;
 let r1PressedTime = 0;
 let r1ReleasedTime = 0;
 
@@ -464,10 +464,10 @@ let longPressThreshold = 300;
 function monitorGamepadInput() {
     // 十字キーのボタン番号（ブラウザによって異なる場合がある）
     let up = 12;
-    let down = 13;
+    // let down = 13;
     let left = 14;
     let right = 15;
-    let l1 = 4;
+    // let l1 = 4;
     let r1 = 5;
 
     // ゲームパッドの配列を取得
@@ -480,10 +480,10 @@ function monitorGamepadInput() {
     if (gamepad) {
         // 十字キーのボタンが押されているかどうかを取得
         let upPressed = gamepad.buttons[up].pressed;
-        let downPressed = gamepad.buttons[down].pressed;
+        // let downPressed = gamepad.buttons[down].pressed;
         let leftPressed = gamepad.buttons[left].pressed;
         let rightPressed = gamepad.buttons[right].pressed;
-        let l1Pressed = gamepad.buttons[l1].pressed;
+        // let l1Pressed = gamepad.buttons[l1].pressed;
         let r1Pressed = gamepad.buttons[r1].pressed;
 
 
@@ -500,27 +500,26 @@ function monitorGamepadInput() {
             // rightボタンが押された時間を記憶
             rightPressedTime = Date.now();
         }
-        if (downPressed && !prevDownPressed) {
-            playerDrop();
-            console.log("Down: " + downPressed);
-            // downボタンが押された時間を記憶
-            downPressedTime = Date.now();
-        }
+        // if (downPressed && !prevDownPressed) {
+        //     playerDrop();
+        //     console.log("Down: " + downPressed);
+        //     // downボタンが押された時間を記憶
+        //     downPressedTime = Date.now();
+        // }
 
         // l1,R1キーで回転操作を行う
-        if (l1Pressed && !prevL1Pressed) {
-            playerRotate(-1);
-            console.log("RotateLeft: " + l1Pressed);
-            // L1ボタンが押された時間を記憶
-            l1PressedTime = Date.now();
-        }
+        // if (l1Pressed && !prevL1Pressed) {
+        //     playerRotate(-1);
+        //     console.log("RotateLeft: " + l1Pressed);
+        //     // L1ボタンが押された時間を記憶
+        //     l1PressedTime = Date.now();
+        // }
         if (r1Pressed && !prevR1Pressed) {
             playerRotate(1);
             console.log("RotateRight: " + r1Pressed);
             // R1ボタンが押された時間を記憶
             r1PressedTime = Date.now();
         }
-
 
         //Leftボタンが離された時間を記憶
         if (!leftPressed && prevLeftPressed) {
@@ -532,13 +531,13 @@ function monitorGamepadInput() {
             rightReleasedTime = Date.now();
         }
         // Downボタンが離された時間を記憶
-        if (!downPressed && prevDownPressed) {
-            downReleasedTime = Date.now();
-        }
+        // if (!downPressed && prevDownPressed) {
+        //     downReleasedTime = Date.now();
+        // }
         // L1ボタンが離された時間を記憶
-        if (!l1Pressed && prevL1Pressed) {
-            l1ReleasedTime = Date.now();
-        }
+        // if (!l1Pressed && prevL1Pressed) {
+        //     l1ReleasedTime = Date.now();
+        // }
         // R1ボタンが離された時間を記憶
         if (!r1Pressed && prevR1Pressed) {
             r1ReleasedTime = Date.now();
@@ -566,23 +565,23 @@ function monitorGamepadInput() {
             }
         }
         // Downボタンが長押しされているかどうかをチェックする
-        if (downPressed && prevDownPressed) {
-            // Downボタンが押されてから現在までの時間を計算する
-            let downPressDuration = Date.now() - downPressedTime;
-            // Downボタンが長押ししたと判断する時間以上になったら、playerDrop()を呼び出す
-            if (downPressDuration >= longPressThreshold) {
-                playerDrop();
-            }
-        }
+        // if (downPressed && prevDownPressed) {
+        //     // Downボタンが押されてから現在までの時間を計算する
+        //     let downPressDuration = Date.now() - downPressedTime;
+        //     // Downボタンが長押ししたと判断する時間以上になったら、playerDrop()を呼び出す
+        //     if (downPressDuration >= longPressThreshold) {
+        //         playerDrop();
+        //     }
+        // }
         // L1ボタンが長押しされているかどうかをチェックする
-        if (l1Pressed && prevL1Pressed) {
-            // L1ボタンが押されてから現在までの時間を計算する
-            let l1pressDuration = Date.now() - l1PressedTime;
-            // L1ボタンが長押ししたと判断する時間以上になったら、playerRotate(-1)を呼び出す
-            if (l1pressDuration >= longPressThreshold) {
-                playerRotate(-1);
-            }
-        }
+        // if (l1Pressed && prevL1Pressed) {
+        //     // L1ボタンが押されてから現在までの時間を計算する
+        //     let l1pressDuration = Date.now() - l1PressedTime;
+        //     // L1ボタンが長押ししたと判断する時間以上になったら、playerRotate(-1)を呼び出す
+        //     if (l1pressDuration >= longPressThreshold) {
+        //         playerRotate(-1);
+        //     }
+        // }
         // R1ボタンが長押しされているどうかをチェックする
         if (r1Pressed && prevR1Pressed) {
             // R1ボタンが押されてから現在までの時間を計算する
@@ -595,10 +594,10 @@ function monitorGamepadInput() {
 
         // 現在のフレームでのボタンの状態を記憶
         prevUpPressed = upPressed;
-        prevDownPressed = downPressed;
+        // prevDownPressed = downPressed;
         prevLeftPressed = leftPressed;
         prevRightPressed = rightPressed;
-        prevL1Pressed = l1Pressed;
+        // prevL1Pressed = l1Pressed;
         prevR1Pressed = r1Pressed;
 
     }

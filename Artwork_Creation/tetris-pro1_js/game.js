@@ -575,10 +575,6 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
     // スマホでの操作
 
 
-
-
-
-
     window.addEventListener('devicemotion', function (e) {
 
         var az = e.acceleration.z
@@ -596,7 +592,6 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
         } else if (az <= 1 || az >= -1) {
             functionRunFlag = false;
         }
-
     }, false);
 
 
