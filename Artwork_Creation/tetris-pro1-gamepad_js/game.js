@@ -432,7 +432,7 @@ function onGamepadDisconnected(event) {
 }
 
 // 前のフレームでのキーのボタンの状態を記憶する変数（初期値はfalse）
-let prevUpPressed = false;
+// let prevUpPressed = false;
 // let prevDownPressed = false;
 let prevLeftPressed = false;
 let prevRightPressed = false;
@@ -458,7 +458,7 @@ let longPressThreshold = 300;
 // コントローラーの入力を監視する関数
 function monitorGamepadInput() {
     // 十字キーのボタン番号（ブラウザによって異なる場合がある）
-    let up = 12;
+    // let up = 12;
     // let down = 13;
     let left = 14;
     let right = 15;
@@ -474,7 +474,7 @@ function monitorGamepadInput() {
     // ゲームパッドが存在するかどうかをチェック
     if (gamepad) {
         // 十字キーのボタンが押されているかどうかを取得
-        let upPressed = gamepad.buttons[up].pressed;
+        // let upPressed = gamepad.buttons[up].pressed;
         // let downPressed = gamepad.buttons[down].pressed;
         let leftPressed = gamepad.buttons[left].pressed;
         let rightPressed = gamepad.buttons[right].pressed;
@@ -588,7 +588,7 @@ function monitorGamepadInput() {
         }
 
         // 現在のフレームでのボタンの状態を記憶
-        prevUpPressed = upPressed;
+        // prevUpPressed = upPressed;
         // prevDownPressed = downPressed;
         prevLeftPressed = leftPressed;
         prevRightPressed = rightPressed;
